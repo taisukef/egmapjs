@@ -14,9 +14,9 @@
 <script>"use strict"
 
 window.onload = function() {
-	var map = initMap('mapid')
-	map.setZoom(11)
-	map.panTo([ 34.985234, 135.758595 ]) // 京都駅
+  const map = initMap('mapid')
+  map.setZoom(11)
+  map.panTo([ 34.985234, 135.758595 ]) // 京都駅
 	
   map.addIcon(34.987522, 135.759335, "京都タワー", "icon/landmark_tower_kyoto.png", 64)
   map.addIcon(34.980837, 135.767639, "鴨川", "icon/thumbnail_bg_kamogawa.jpg", 64)
@@ -29,7 +29,7 @@ window.onload = function() {
   map.addIcon(35.026885, 135.798276, "銀閣寺", "icon/kankou_ginkakuji.png", 64)
   map.addIcon(34.889282, 135.80766, "平等院鳳凰堂", "icon/kankou_byodoin.png", 64)
 	
-	map.on('click', (e) => alert(e.latlng))
+  map.on('click', (e) => alert(e.latlng))
 }
 
 </script>
