@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"/>
+
+<title>京都いらすとマップ</title>
+
+<link rel="apple-touch-icon" href="app-icon.png"/>
+<meta property="og:image" content="ogp-image.jpg"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<script src="https://code4fukui.github.io/egmapjs/egmap.js"></script>
+<link rel="stylesheet" href="https://code4fukui.github.io/egmapjs/egmap.css"/>
+<script src="https://fukuno.jig.jp/fukuno.js"></script>
+<script src="https://code4fukui.github.io/egmapjs/sparql.js"></script>
+<script>"use strict"
+
+window.onload = function() {
+	var map = initMap('mapid')
+	map.setZoom(16)
+	map.panTo([ 34.985234, 135.758595 ]) // 京都駅
+	
+  map.addIcon(34.987522, 135.759335, "京都タワー", "icon/landmark_tower_kyoto.png", 64)
+  map.addIcon(34.980837, 135.767639, "鴨川", "icon/thumbnail_bg_kamogawa.png", 64)
+  map.addIcon(35.023115, 135.803829, "五山の送り火", "icon/landmark_gozan_okuribi.png", 64)
+  map.addIcon(35.010324, 135.768301, "本能寺", "icon/landmark_honnouji.png", 64)
+  map.addIcon(34.967021, 135.774746, "伏見稲荷の鳥居", "icon/landmark_fushimi_inari.png", 64)
+  map.addIcon(34.988047, 135.771754, "三十三間堂", "icon/kankou_sanjusangendou.png", 64)
+  map.addIcon(34.994875, 135.784959, "清水寺", "icon/kankou_kiyomizudera.png", 64)
+  map.addIcon(35.039527, 135.728476, "金閣寺", "icon/kankou_kinkakuji.png", 64)
+  map.addIcon(35.026885, 135.798276, "銀閣寺", "icon/kankou_ginkakuji.png", 64)
+  map.addIcon(34.889282, 135.80766, "平等院鳳凰堂", "icon/kankou_byodoin.png", 64)
+	
+	map.on('click', (e) => alert(e.latlng))
+}
+
+</script>
+<style>
+
+body { margin: 0; font-family: sans-serif; text-align: center; }
+h1 { font-size: 5vw; margin: 0; }
+#mapid { height: 60vh; }
+
+</style></head><body>
+
+<h1>わたしのマップ</h1>
+<div id="mapid"></div>
+
+<img id=qrcode><script>addEventListener("load", () => qrcode.src = "https://chart.apis.google.com/chart?chs=140x140&cht=qr&chl=" + encodeURIComponent(document.location))</script><br>
+
+<a href=https://fukuno.jig.jp/2393>京都いらすとマップ - egmapjs</a>
+
+</body></html>
